@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+/* ===========================
+   CSS VARIABLES (Theme)
+=========================== */
+:root {
+  --background: 240 10% 4%;
+  --foreground: 0 0% 98%;
+
+  --card: 240 10% 6%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 10% 4%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 210 100% 60%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 65%;
+
+  --accent: 210 100% 60%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 240 4% 16%;
+  --input: 240 4% 16%;
+  --ring: 210 100% 60%;
+
+  --radius: 0.75rem;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* ===========================
+   BASE STYLES
+=========================== */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--primary-foreground));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* ===========================
+   UTILITIES (Optional)
+=========================== */
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(to right, hsl(var(--primary)), #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass-card {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ===========================
+   YOUR OWN NORMAL CSS BELOW
+   (THIS NOW WORKS PROPERLY)
+=========================== */
+
+.my-custom-box {
+  padding: 20px;
+  border-radius: 12px;
+  background: #111;
+  color: white;
+}
